@@ -38,56 +38,43 @@ ReconX/
 ├── requirements.txt
 └── README.md
 
-yaml
-Copy
-Edit
+
                                🚀 Usage
 
-### Install Requirements
+ Install Requirements
 ```bash
 pip install -r requirements.txt
-Run Modules
-Passive Recon
-bash
-Copy
-Edit
+
+                               Run Modules
+   1.Passive Recon
+
 python3 scripts/passive/whois_lookup.py
 python3 scripts/passive/dns_enum.py
 python3 scripts/passive/subdomain_enum.py
-Active Recon
-bash
-Copy
-Edit
+
+  2.Active Recon
+
 python3 scripts/active/port_scan.py
 python3 scripts/active/banner_grab.py
 python3 scripts/active/tech_detect.py
-Run via Main CLI
-bash
-Copy
-Edit
+
+  3. Run via Main CLI
+
 python3 recon.py --mode passive
 python3 recon.py --mode active
 
                                        📦 Dependencies
-Python 3.6+
+   ...Python 3.6+
 
-requests
+1.requests
+2.socket
+3.argparse
+4.whois
+5.dnspython
+6.json, re, sys
 
-socket
-
-argparse
-
-whois
-
-dnspython
-
-json, re, sys
-
-Install all using:
-
-bash
-Copy
-Edit
+...Install all using:
+ 
 pip install -r requirements.txt
 
                                 ✍️ Contributors
