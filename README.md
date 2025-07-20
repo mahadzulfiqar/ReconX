@@ -1,4 +1,5 @@
-Custom Recon Tool – Modular Reconnaissance Tool
+ReconX
+ – Modular Reconnaissance Tool
 
 Custom Recon Tool is a lightweight, modular reconnaissance framework designed for penetration testers. It includes both passive and active information gathering modules, integrated via a central CLI controller.
 
