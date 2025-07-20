@@ -1,85 +1,103 @@
-CustomReconTool – Cybersecurity Reconnaissance Tool
+Custom Recon Tool – Modular Reconnaissance Tool
 
-Overview:
+Custom Recon Tool is a lightweight, modular reconnaissance framework designed for penetration testers. It includes both passive and active information gathering modules, integrated via a central CLI controller.
 
-CustomReconTool is a Python-based command-line reconnaissance tool designed for cybersecurity professionals and students. It supports both active and passive information gathering techniques, offering a modular structure to simplify analysis of target systems and domains. The tool is intended for educational and ethical penetration testing purposes only.
 
-Project Structure
 
-The repository is organized as follows:
+                       🧠 Features
 
-customrecontool/
-├── active/
-│   ├── port\_scan.py
-│   ├── banner\_grab.py
-│   ├── tech\_detect.py
-│   └── **init**.py
-├── passive/
-│   ├── dns\_enum.py
-│   ├── subdomain\_enum.py
-│   ├── whois\_lookup.py
-│   └── **init**.py
-├── main.py
-├── cli.py
+- 🔍 Passive Recon
+  - WHOIS Lookup
+  - DNS Record Enumeration (A, MX, NS, TXT)
+  - Subdomain Enumeration using public APIs (crt.sh, AlienVault, etc.)
+
+- 🔧 Active Recon
+  - Port Scanning (TCP sockets)
+  - Banner Grabbing
+  - Technology Detection using HTTP headers
+
+- 📄 Reporting
+  - Structured output for analysis
+  - Easily extendable and script-friendly
+
+                        📁 Project Structure
+
+ReconX/
+├── recon.py # Main CLI controller
+├── scripts/
+│ ├── passive/
+│ │ ├── whois_lookup.py
+│ │ ├── dns_enum.py
+│ │ ├── subdomain_enum.py
+│ ├── active/
+│ │ ├── port_scan.py
+│ │ ├── banner_grab.py
+│ │ ├── tech_detect.py
+├── reports/ # Stores generated reports
+├── utils/ # Shared helper modules (optional)
 ├── requirements.txt
 └── README.md
 
-Features:
+yaml
+Copy
+Edit
+                               🚀 Usage
 
-Active Reconnaissance
+### Install Requirements
+```bash
+pip install -r requirements.txt
+Run Modules
+Passive Recon
+bash
+Copy
+Edit
+python3 scripts/passive/whois_lookup.py
+python3 scripts/passive/dns_enum.py
+python3 scripts/passive/subdomain_enum.py
+Active Recon
+bash
+Copy
+Edit
+python3 scripts/active/port_scan.py
+python3 scripts/active/banner_grab.py
+python3 scripts/active/tech_detect.py
+Run via Main CLI
+bash
+Copy
+Edit
+python3 recon.py --mode passive
+python3 recon.py --mode active
 
-- TCP port scanning using socket-based techniques
-- Banner grabbing to identify running services
-- Detection of technologies via HTTP headers
+                                       📦 Dependencies
+Python 3.6+
 
-Passive Reconnaissance
+requests
 
-- WHOIS record lookup for domain registration data
-- DNS record enumeration
--Subdomain enumeration using online services
+socket
 
-Usage:
+argparse
 
-To run all modules (active and passive) using the main controller script:
-python main.py
+whois
 
-To run modules selectively via the command-line interface:
-python cli.py --target example.com --mode all
+dnspython
 
-Available CLI modes:
+json, re, sys
 
--active
-- passive
-- all
+Install all using:
 
-Installation:
-
-Step 1: Clone the repository
-git clone [https://github.com/yourusername/customrecontool.git](https://github.com/yourusername/customrecontool.git)
-cd customrecontool
-
-Step 2: Install the required Python dependencies
+bash
+Copy
+Edit
 pip install -r requirements.txt
 
-Requirements:
+                                ✍️ Contributors
 
- Python version 3.6 or higher
- Dependencies listed in the requirements.txt file
+Tooba Zainab = active recon
+Mahad Zulfiqar =  passive recon
+Minahil Nadeem =  reporting CLI main
 
-Author:
+                               ⚠️ Disclaimer
 
-Minahil Nadeem
-
-License:
-
-This project is intended strictly for ethical and academic use. Unauthorized or malicious use of this tool is prohibited. The author does not assume any responsibility for misuse of this software.
-
-
-
-
-
-
-
-
-
+This tool is for educational and authorized security testing purposes only.
+Do not use it against targets without explicit permission.
 
