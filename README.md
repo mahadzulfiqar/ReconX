@@ -80,9 +80,9 @@ pip install -r requirements.txt
 
                                 ✍️ Contributors
 
-Tooba Zainab = active recon
-Mahad Zulfiqar =  passive recon
-Minahil Nadeem =  reporting CLI main
+Tooba Zainab = active recon  ( https://github.com/mahadzulfiqar/Active-Recon-Module )
+Mahad Zulfiqar =  passive recon ( https://github.com/mahadzulfiqar/Passive-Recon-Module )
+Minahil Nadeem =  reporting CLI main 
 
                                ⚠️ Disclaimer
 
