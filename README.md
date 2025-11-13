@@ -1,91 +1,26 @@
-ReconX
- – Modular Reconnaissance Tool
+# ReconX — Modular Reconnaissance Toolkit
 
-Custom Recon Tool is a lightweight, modular reconnaissance framework designed for penetration testers. It includes both passive and active information gathering modules, integrated via a central CLI controller.
+[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)]()
+[![Build](https://img.shields.io/github/actions/workflow/status/<your-username>/ReconX/python-ci.yml?branch=main)]()
 
+ReconX is a modular, educational reconnaissance toolkit written in Python for authorized security testing and learning. It bundles passive and active reconnaissance utilities (WHOIS, DNS, subdomain enumeration, port scanning, banner grabbing) and exports structured reports for further analysis.
 
+> ⚠️ **IMPORTANT:** This tool is for **education and authorized security testing only**. Do not use ReconX against systems you do not have explicit permission to test.
 
-                       🧠 Features
+---
 
-- 🔍 Passive Recon
-  - WHOIS Lookup
-  - DNS Record Enumeration (A, MX, NS, TXT)
-  - Subdomain Enumeration using public APIs (crt.sh, AlienVault, etc.)
+## Features
+- WHOIS lookup
+- DNS record enumeration (A, AAAA, NS, MX, SOA, TXT)
+- Subdomain enumeration (wordlist-based)
+- Threaded TCP port scanner with banner grabbing (planned / v2)
+- Exports results in JSON and plain-text
+- CLI with `argparse` and simple output options
+- Modular layout for easy extension
 
-- 🔧 Active Recon
-  - Port Scanning (TCP sockets)
-  - Banner Grabbing
-  - Technology Detection using HTTP headers
+---
 
-- 📄 Reporting
-  - Structured output for analysis
-  - Easily extendable and script-friendly
-
-                        📁 Project Structure
-
-ReconX/
-├── recon.py # Main CLI controller
-├── scripts/
-│ ├── passive/
-│ │ ├── whois_lookup.py
-│ │ ├── dns_enum.py
-│ │ ├── subdomain_enum.py
-│ ├── active/
-│ │ ├── port_scan.py
-│ │ ├── banner_grab.py
-│ │ ├── tech_detect.py
-├── reports/ # Stores generated reports
-├── utils/ # Shared helper modules (optional)
-├── requirements.txt
-└── README.md
-
-
-                               🚀 Usage
-
- Install Requirements
+## Quick demo (example)
 ```bash
-pip install -r requirements.txt
-
-                               Run Modules
-   1.Passive Recon
-
-python3 scripts/passive/whois_lookup.py
-python3 scripts/passive/dns_enum.py
-python3 scripts/passive/subdomain_enum.py
-
-  2.Active Recon
-
-python3 scripts/active/port_scan.py
-python3 scripts/active/banner_grab.py
-python3 scripts/active/tech_detect.py
-
-  3. Run via Main CLI
-
-python3 recon.py --mode passive
-python3 recon.py --mode active
-
-                                       📦 Dependencies
-   ...Python 3.6+
-
-1.requests
-2.socket
-3.argparse
-4.whois
-5.dnspython
-6.json, re, sys
-
-...Install all using:
- 
-pip install -r requirements.txt
-
-                                ✍️ Contributors
-
-Tooba Zainab = active recon  ( https://github.com/mahadzulfiqar/Active-Recon-Module )
-Mahad Zulfiqar =  passive recon ( https://github.com/mahadzulfiqar/Passive-Recon-Module )
-Minahil Nadeem =  reporting CLI main 
-
-                               ⚠️ Disclaimer
-
-This tool is for educational and authorized security testing purposes only.
-Do not use it against targets without explicit permission.
-
+$ python main.py --target example.com --mode passive --output reports/example_report.json
