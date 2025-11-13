@@ -24,3 +24,60 @@ ReconX is a modular, educational reconnaissance toolkit written in Python for au
 ## Quick demo (example)
 ```bash
 $ python main.py --target example.com --mode passive --output reports/example_report.json
+
+
+Installation (recommended)
+
+Clone the repo:
+
+git clone https://github.com/<your-username>/ReconX.git
+cd ReconX
+
+
+Create a virtual environment and install:
+
+python -m venv venv
+source venv/bin/activate     # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+
+
+Pin requirements (recommended): after you've installed packages, run:
+
+pip freeze > requirements.txt
+
+Usage
+
+Basic CLI:
+
+python main.py --target example.com --mode passive --output reports/example_report.json
+
+
+Options:
+
+--target (required) : target domain or IP
+
+--mode : passive, active, all
+
+--output : path to save JSON report
+
+--threads : max concurrency for scanners (default 10)
+
+--timeout : network timeout in seconds (default 3)
+
+Project structure
+ReconX/
+├── modules/
+│   ├── passive/
+│   │   ├── whois_lookup.py
+│   │   ├── dns_enum.py
+│   │   └── subdomain_enum.py
+│   └── active/
+│       └── port_scan.py
+├── reports/
+│   └── sample_report.json
+├── main.py
+├── requirements.txt
+├── requirements-dev.txt
+├── Dockerfile
+├── README.md
+└── LICENSE
